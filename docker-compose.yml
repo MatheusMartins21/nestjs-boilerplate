@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  postgres:
+    container_name: database-boilerplate
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: boilerplate
+      POSTGRES_PASSWORD: boilerplate123
+      POSTGRES_DB: boilerplate
+      PGDATA: /data/postgres
+    volumes:
+      - ./data/pg:/data/postgres
+
+  # api:
+  #   image: mcr.microsoft.com/devcontainers/typescript-node:1-18-bookworm
+  #   container_name: redis_boilerplate
+  #   ports:
+  #     - '3333:3333'
+  #   volumes:
+  #     - .:/api
+  #   depends_on:
+  #     - 'nestjs_redis_bull_redis'
+
+  redis:
+    image: redis:6.2.3-alpine
+    container_name: redis_boilerplate
+    ports:
+      - '6379:6379'
+    environment:
+      NODE_ENV: development
+    deploy:
+      resources:
+        limits:
+          cpus: '0.1'
+          memory: '10M'
+
+networks:
+  default:
+    name: nestjs_redis_bull_network_default
