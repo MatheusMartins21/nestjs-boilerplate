@@ -1,20 +1,20 @@
 # Boilerplate NestJS
 
-First install project dependencies:
+Boilerplate feito por minha autoria para criar facilmente novos projetos pessoais, além é claro, de auxiliar qualquer um que queira aprender sobre NestJS =).
+
+Primeiro, instale as dependências do projeto:
 `yarn install`
 
-Start docker with `docker-compose up` to generate Postgre and Redis instances.
+Inicie o Docker com `docker-compose up` para gerar as instâncias do PostgreSQL e Redis (Sinta-se a vontade para alterar o nome da instância como as credenciais de acesso).
 
-Execute `yarn prisma migrate dev` to create the schemas on Database.
+Execute `yarn prisma migrate dev` para criar os esquemas no banco de dados.
 
-Start the project with `yarn start:dev`
+Inicie o projeto com `yarn start:dev`
 
-To view documentation, use [http://localhost:3000/docs](http://localhost:3000/docs)
+Para visualizar a documentação, acesse [http://localhost:3000/docs](http://localhost:3000/docs)
 
-The private and public key was generated in RSA and converted to base64.
+A chave privada e a chave pública foram geradas em RSA e convertidas para base64.
 
-## Utils:
-
-https://cryptotools.net/rsagen
-
-https://www.base64encode.org/
+## Utilitários:
+[https://cryptotools.net/rsagen](https://cryptotools.net/rsagen)
+[https://www.base64encode.org/](https://www.base64encode.org/)
